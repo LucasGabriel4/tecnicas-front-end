@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Animation Css</title>
+
+
+    <style>
+
+        section{
+            margin-top: 20px;
+        }
+
+         h1{
+            font-size: 20px;
+         }
+          .item{
+            width: 100px;
+            height: 100px;
+          }
+
+          /* transition hover */
+ 
+          .transitionBackground{
+            transition: background-color 1s;
+          }
+ 
+         .transitionBackground:hover{
+                background-color: red;
+         }
+
+      
+
+
+         .transitionSize{
+            transition: transform 1s;
+         }
+
+         .transitionSize:hover{
+            transform: scale(1.5);
+         }
+          
+         .transitionRotate{
+            transition: transform 0.5s;
+         }
+
+         .transitionRotate:hover{
+            transform: rotateZ(180deg);
+         }
+
+
+
+         .transitionDelay{
+            transition: width 1s 1s, height 1s ;
+         }
+
+         .transitionDelay:hover{
+            width: 200px;
+            height: 200px;
+         }
+
+
+         /* transition checkbox */
+
+         .transitionCheckbox{
+           
+            width: 50px;
+            height: 50px;
+            transition: transform 0.5s;
+         }
+
+         .transitionCheckbox:checked{
+            transform: rotateY(360deg);
+            
+           
+         }
+
+         .transitionRadio{
+            width: 30px;
+            height: 30px;
+            transition: transform 1s;
+         }
+
+         .transitionRadio:checked{
+            transform: scale(1.3);
+         }
+
+
+
+         /* Transition focus */
+
+
+         .transitionText{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            transition: transform 0.5s;
+         }
+
+         .transitionText:focus{
+            transform: scaleX(0.5) scaleY(0.7) rotateZ(180deg) ;
+         }
+    </style>
+</head>
+<body>
+    <h1>Transições</h1>
+
+    <h2>Hover</h2>
+
+    <section>
+        <div class="blue item transitionBackground"><h1>Azul</h1></div>
+        <div class="green item transitionSize"><h1>verde</h1></div>
+        <div class="red item transitionRotate"><h1>vermelho</h1></div>
+
+    </section>
+
+
+    <hr>
+
+    <h1>Transition Delay</h1>
+
+    <section>
+        <div class="red item transitionDelay"><h1>vermelho</h1></div>
+
+    </section>
+
+
+    <hr>
+
+    <h1>Checked</h1>
+
+    <section>
+        <input type="checkbox" class="transitionCheckbox">
+        <input type="radio" name="radio" class="transitionRadio">
+        <input type="radio" name="radio" class="transitionRadio">
+    </section> 
+
+
+    <hr>
+
+    
+    <h1>Focus</h1>
+
+    <section>
+        <input type="text" class="transitionText">
+    </section> 
+</body>
+</html>

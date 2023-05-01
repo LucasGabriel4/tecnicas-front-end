@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <title>Menu Animado</title>
+</head>
+<body>
+    
+<div class="container">
+    <button id="btn_menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        function animarBotao(){
+            const btn = document.querySelector("#btn_menu");
+
+            btn.addEventListener("click", e => {
+                btn.classList.toggle("ativar")
+            })
+        }
+
+        animarBotao();
+
+    </script>
+</body>
+</html>

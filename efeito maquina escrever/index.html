@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TypeWriter</title>
+</head>
+<body>
+
+<style>
+  body {
+    background: #0e1013;
+  }
+  h1 {
+    max-width: 480px;
+    text-align: center;
+    margin: 60px auto;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+  }
+
+  h1::after{
+    content: '|';
+    opacity: 1;
+    animation: blinks .5s infinite;
+  }
+
+  @keyframes blinks {
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+  }
+</style>
+
+<h1>Cursos de UX/UI Design e Front End na Origamid</h1>
+
+
+<script>
+  const titulo = document.querySelector('h1');
+
+   function TypeWriterEffect(elemento,delay = 0){
+     const texto = elemento.innerHTML.split('');
+     elemento.innerHTML = '';
+
+     texto.forEach((letra,index) => {
+         setTimeout(function(){
+            elemento.innerHTML+= letra;
+         },75 * index)
+     })
+     
+   }
+
+   TypeWriterEffect(titulo)
+
+
+
+
+</script>
+
+</body>
+</html>

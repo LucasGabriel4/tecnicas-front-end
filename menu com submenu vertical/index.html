@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <style type="text/css">
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+
+          html, body{
+            height: 100%;
+          }
+
+
+          .side-menu{
+            height: 100%;
+          }
+
+       .side-menu ul{
+         /* width: 200px; */
+         height: 100%;
+         background-color: gray;
+          overflow: hidden; 
+       
+       }
+
+
+       .menu-item{
+        position: relative;
+       }
+
+       .menu-item a{
+         display: block;
+         border-bottom: 1px solid white;
+         padding: 10px 15px;
+       }
+
+       .sub-menu{
+        position: absolute;
+        min-width: 170px;
+        padding: 8px 12px;
+        background-color: #ccc;
+        left: 195px;
+        top: 0;
+        display: none;
+       
+        
+       }
+
+
+       .menu-item:hover .sub-menu{
+        display: block;
+       }
+
+
+       .menu_bar{
+        padding: 10px;
+        cursor: pointer;
+       }
+
+       .hide{
+        transition: 0.5s;
+        width: 0;
+       }
+
+
+       .show{
+        width: 200px;
+        transition: 0.5s;
+       }
+
+    </style>
+
+
+
+    <nav class="side-menu">
+      <div class="menu_bar"><i class="fa-solid fa-bars"></i></div>
+      <ul id="menu" class="hide">
+         <li class="menu-item">
+             <a href="">Home</a>
+             <div class="sub-menu">
+                 <a href="">Meu link #1</a>
+                 <a href="">Meu link #1</a>
+             </div>
+         </li>
+
+
+         <li class="menu-item">
+            <a href="">Home</a>
+         </li>
+
+
+         <li class="menu-item">
+           <a href="">Home</a>
+         </li>
+      </ul>
+     
+    </nav>
+
+    <script src="https://kit.fontawesome.com/bd023ccd7d.js" crossorigin="anonymous"></script>
+
+    <script>
+       var menu =  document.querySelector(".menu_bar")
+
+       menu.addEventListener("click", function(){
+
+          var sideMenu = document.querySelector("#menu")
+
+          if(sideMenu.classList.contains("hide")){
+            sideMenu.classList.add("show")
+            sideMenu.classList.remove("hide")
+            sideMenu.style.overflow = "visible"
+          }else{
+            sideMenu.classList.add("hide")
+            sideMenu.classList.remove("show")
+            sideMenu.style.overflow = "hidden"
+         
+          }
+       })
+    </script>
+</body>
+</html>

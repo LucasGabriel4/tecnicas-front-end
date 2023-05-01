@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css"  rel="stylesheet">
+    <title>Animation</title>
+
+    <style>
+        section{
+            margin-top: 20px;
+        }
+
+
+
+         h1{
+            font-size: 20px;
+         }
+/*  
+        .item:hover{
+            animation-play-state: paused;
+        } */
+
+          .item{
+            width: 100px;
+            height: 100px;
+
+          }
+
+
+          .animationFadeIn{
+            animation: fadeIn 2s linear;
+          }
+
+          .animationFadeOut{
+            animation: fadeIn 2s linear;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+          }
+
+          @keyframes fadeIn{
+            from{
+               opacity: 0;
+            }
+
+            to{
+               opacity: 1;
+            } 
+          }
+
+
+          .animationFadeInFadeOut{
+            animation: fadeInFadeOut 2s linear infinite;
+
+          }
+
+          @keyframes fadeInFadeOut{
+            0%{
+                opacity: 1;
+
+          } 
+          50%{
+              opacity: 0.2;
+ 
+          }
+          100%{
+               opacity: 1;
+               
+          }
+
+        }
+
+
+
+        /* Animation spinner */
+
+
+
+
+        .spinner{
+            border-radius: 50%;
+        }
+
+
+        .animationSpinner{
+            animation: rotate 2s linear infinite;
+        
+        }
+
+        
+        .animationSpinnerEase{
+            animation: rotate 2s ease infinite;
+        }
+
+        .animationSpinnerEaseOut{
+            animation: rotate 2s ease infinite;
+        }
+
+
+        @keyframes rotate{
+            from{
+                transform: rotateZ(0deg);
+            }
+
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+
+
+        /* animation position */
+
+        .positionBox{
+            width: 100%;
+            height: 300px;
+            background-color: #fff;
+            position: relative;
+        }
+        
+
+        .animationPosition{
+            position: absolute;
+            animation: position 4s linear infinite;
+            animation-direction: alternate;
+        }
+
+
+        @keyframes position{
+            0%{
+                left: 0;
+                top: 0;
+            }
+
+           35%{
+                left: calc(100% - 100px);
+                top: 0;
+            }
+
+            50%{
+                left: calc(100% - 100px);
+                top: calc(100% - 100px)
+            }
+
+            85%{
+                top: calc(100% - 100px);
+                left: 0;
+            }
+
+            100%{
+                left: 0;
+                top: 0;
+            }
+        }
+
+
+        /* Animation content */
+
+
+        .animationContent::after{
+            content: "";
+            animation: content 2s linear infinite;
+            color: white;
+        }
+
+        @keyframes content{
+            0%{
+                content: "Promoção"
+            }
+
+            50%{
+                content: "";
+            }
+
+            60%{
+                content: "Frete Gratis";
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Animation</h1>
+
+    <h2>Fade</h2>
+
+    <section>
+        <div class="blue item animationFadeIn"><h1>Azul</h1></div>
+        <div class="green item animationFadeOut"><h1>verde</h1></div>
+        <div class="red item animationFadeInFadeOut"><h1>vermelho</h1></div>
+
+    </section>
+
+    <hr>
+
+    <h2>Spinner</h2>
+
+    <section>
+        <div class="blue item spinner animationSpinner"><h1>linear</h1></div>
+        <div class="green item spinner animationSpinnerEase"><h1>ease</h1></div>
+        <div class="red item spinner animationSpinnerEaseOut"><h1>ease out</h1></div>
+
+    </section>
+
+
+    <hr>
+
+    <h2>Position</h2>
+
+    <section class="positionBox">
+        <div class="yellow item animationPosition"><h1>Amarelo</h1></div>
+
+    </section>
+
+
+    <hr>
+
+    <h2>Content</h2>
+
+    <section >
+        <div class="red item animationContent"><h1></h1></div>
+
+    </section>
+    
+</body>
+</html>
